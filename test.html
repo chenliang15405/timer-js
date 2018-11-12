@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script>
+			
+			/*$(function(){
+				
+				setInterval("showTime()",1000);
+			})*/
+			
+			function tijiao(){
+				//如果是var timer  则表示局部变量，如果没有定义类型，表示全局变量
+				timer = setInterval("showTime()",1000);
+			}
+			
+			var t = 5;
+			function showTime(){
+				$("#time").html(t);
+				t--;
+				if(t == 0){
+					clearInterval(timer);
+					window.location.href="http://www.baidu.com";
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		
+		<div style="height:100px;width:100px;margin: 0 auto;">
+			<span id="time">5</span>
+			
+			<button onclick="tijiao()">提交</button>
+		</div>
+	</body>
+</html>
